@@ -19,6 +19,7 @@ const getCart = async (req, res) => {
 };
 
 const createCart = async (req, res) => {
+    
     const { product, quantity, price, totalPrice } = req.body;
     const { id } = req.user;
 

@@ -5,12 +5,13 @@ const cartSchema = new Schema({
     product: [{
         product: {
             type: Schema.Types.ObjectId,
-            ref: 'Product',   //อ้างอิงถึง Schema product
+            ref: 'Product',
             required: true
         },
         quantity: {
             type: Number,
-            required: true
+            required: true,
+            default: 1
         },
         price: {
             type: Number,
@@ -30,6 +31,7 @@ const cartSchema = new Schema({
         type: Date,
         default: Date.now
     }
-})
+});
 
 module.exports = mongoose.model('Cart', cartSchema);
+
